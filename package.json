@@ -1,0 +1,16 @@
+{
+  "name": "hospedaje-huancayo",
+  "version": "1.0.0",
+  "description": "Hospedaje Valle del Mantaro - Huancayo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Andre Luis",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}

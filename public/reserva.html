@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario de solicitud de reserva.">
+  <title>Solicitar reserva | Hospedaje Valle del Mantaro</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="contenedor">
+      <a href="index.html" class="logo">Valle del <span>Mantaro</span></a>
+      <button class="btn-menu" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Cuartos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="reserva.html" class="menu-reserva">Reservar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <p class="migas"><a href="index.html">Inicio</a> / Reservar</p>
+      <h1>Solicitar reserva</h1>
+      <p>Completa el formulario y te confirmaremos la disponibilidad.</p>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="contenedor reserva">
+      <section>
+        <div id="alerta-exito" class="alerta alerta-exito"></div>
+        <div id="alerta-error" class="alerta alerta-error"></div>
+
+        <form id="form-reserva" class="formulario" novalidate>
+          <h3>1. Datos del cliente</h3>
+          <div class="fila">
+            <div class="campo">
+              <label for="nombres">Nombres <span class="req">*</span></label>
+              <input type="text" id="nombres" name="nombres" placeholder="Ej. María Elena" maxlength="60" autocomplete="given-name">
+              <p class="mensaje-error"></p>
+            </div>
+            <div class="campo">
+              <label for="apellidos">Apellidos <span class="req">*</span></label>
+              <input type="text" id="apellidos" name="apellidos" placeholder="Ej. Quispe Huamán" maxlength="60" autocomplete="family-name">
+              <p class="mensaje-error"></p>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="campo">
+              <label for="telefono">Teléfono celular <span class="req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="9XXXXXXXX" maxlength="9" inputmode="numeric" autocomplete="tel">
+              <p class="mensaje-error"></p>
+            </div>
+            <div class="campo">
+              <label for="correo">Correo electrónico <span class="req">*</span></label>
+              <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" maxlength="100" autocomplete="email">
+              <p class="mensaje-error"></p>
+            </div>
+          </div>
+
+          <h3>2. Datos de la estadía</h3>
+          <div class="campo">
+            <label for="cuarto_id">Cuarto <span class="req">*</span></label>
+            <select id="cuarto_id" name="cuarto_id">
+              <option value="">— Selecciona un cuarto —</option>
+            </select>
+            <p class="mensaje-error"></p>
+          </div>
+          <div class="fila">
+            <div class="campo">
+              <label for="fecha_ingreso">Fecha de ingreso <span class="req">*</span></label>
+              <input type="date" id="fecha_ingreso" name="fecha_ingreso">
+              <p class="mensaje-error"></p>
+            </div>
+            <div class="campo">
+              <label for="cantidad">Tiempo estimado de alquiler <span class="req">*</span></label>
+              <div class="tiempo">
+                <input type="number" id="cantidad" name="cantidad" min="1" max="365" value="1">
+                <select id="unidad" name="unidad" aria-label="Unidad de tiempo">
+                  <option value="dias">Día(s)</option>
+                  <option value="semanas">Semana(s)</option>
+                  <option value="meses">Mes(es)</option>
+                </select>
+              </div>
+              <p class="ayuda">1 semana = 7 días · 1 mes = 30 días</p>
+              <p class="mensaje-error"></p>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="comentario">Comentarios (opcional)</label>
+            <textarea id="comentario" name="comentario" rows="3" maxlength="255" placeholder="Hora aproximada de llegada, cama adicional, etc."></textarea>
+          </div>
+
+          <button type="submit" id="btn-enviar" class="btn btn-bloque">Enviar solicitud de reserva</button>
+          <p class="ayuda" style="text-align:center;margin-top:10px">Esta es una solicitud: la reserva se confirma cuando el hospedaje se comunique contigo.</p>
+        </form>
+      </section>
+
+      <aside class="resumen">
+        <h3>Resumen de tu solicitud</h3>
+        <img id="res-img" src="" alt="Cuarto seleccionado" style="display:none">
+        <div class="resumen-fila"><span>Cuarto</span><span id="res-cuarto">—</span></div>
+        <div class="resumen-fila"><span>Precio por día</span><span id="res-precio">—</span></div>
+        <div class="resumen-fila"><span>Tiempo</span><span id="res-tiempo">—</span></div>
+        <div class="resumen-fila"><span>Ingreso</span><span id="res-ingreso">—</span></div>
+        <div class="resumen-fila"><span>Salida aprox.</span><span id="res-salida">—</span></div>
+        <div class="resumen-total"><span>Total estimado</span><span id="res-total">S/ 0.00</span></div>
+        <p class="nota">Monto referencial: precio por día × total de días. El precio final se confirma al reservar.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grilla">
+        <div>
+          <h4>Hospedaje Valle del Mantaro</h4>
+          <p>Descanso cálido y seguro en el corazón de Huancayo, a pocas cuadras de la Plaza Constitución.</p>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="catalogo.html">Catálogo de cuartos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="reserva.html">Solicitar reserva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Dirección:</strong> Jr. Cajamarca 784, Huancayo</li>
+            <li><strong>Teléfono:</strong> 985 623 009</li>
+            <li><strong>Correo:</strong> reservas@vallemantaro.pe</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-final">© <span class="anio"></span> Hospedaje Valle del Mantaro · Andre Luis</p>
+    </div>
+  </footer>
+
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/reserva.js"></script>
+</body>
+</html>

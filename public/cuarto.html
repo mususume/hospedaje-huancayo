@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descripción de la habitación.">
+  <title>Detalle del cuarto | Hospedaje Valle del Mantaro</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="contenedor">
+      <a href="index.html" class="logo">Valle del <span>Mantaro</span></a>
+      <button class="btn-menu" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Cuartos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="reserva.html" class="menu-reserva">Reservar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <p class="migas"><a href="index.html">Inicio</a> / <a href="catalogo.html">Cuartos</a> / <span id="migas-nombre">…</span></p>
+      <h1 id="cab-nombre">Cargando…</h1>
+      <p id="cab-tipo"></p>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="contenedor">
+      <p id="cargando" class="cargando">Cargando información del cuarto…</p>
+
+      <div id="contenido-cuarto" class="detalle" style="display:none">
+        <section>
+          <div class="galeria-principal"><img id="img-principal" src="" alt=""></div>
+
+          <div style="margin-top:34px">
+            <h3 style="margin-bottom:10px">Descripción</h3>
+            <p id="det-descripcion"></p>
+            <h3 style="margin:24px 0 6px">Servicios incluidos</h3>
+            <ul id="det-servicios" class="servicios"></ul>
+            <h3 style="margin:24px 0 6px">Políticas</h3>
+            <p>Check-in desde las 13:00 h · Check-out hasta las 11:00 h · No se permite fumar dentro de las habitaciones.</p>
+          </div>
+        </section>
+
+        <aside class="detalle-info">
+          <span class="etiqueta" id="det-tipo"></span>
+          <h2 id="det-nombre"></h2>
+          <div class="precio" id="det-precio"></div>
+          <div class="caracteristicas" style="grid-template-columns:repeat(2,1fr)">
+            <div class="caracteristica"><strong id="det-camas">0</strong><span>Camas</span></div>
+            <div class="caracteristica"><strong id="det-capacidad">0</strong><span>Personas</span></div>
+          </div>
+          <a href="reserva.html" id="btn-reservar" class="btn btn-bloque">Reservar este cuarto</a>
+          <a href="catalogo.html" class="btn btn-borde btn-bloque" style="margin-top:10px">Volver al catálogo</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grilla">
+        <div>
+          <h4>Hospedaje Valle del Mantaro</h4>
+          <p>Descanso cálido y seguro en el corazón de Huancayo, a pocas cuadras de la Plaza Constitución.</p>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="catalogo.html">Catálogo de cuartos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="reserva.html">Solicitar reserva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Dirección:</strong> Jr. Cajamarca 784, Huancayo</li>
+            <li><strong>Teléfono:</strong> 985 623 009</li>
+            <li><strong>Correo:</strong> reservas@vallemantaro.pe</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-final">© <span class="anio"></span> Hospedaje Valle del Mantaro · Andre Luis</p>
+    </div>
+  </footer>
+
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cuarto.js"></script>
+</body>
+</html>

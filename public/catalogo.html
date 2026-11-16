@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de habitaciones del Hospedaje Valle del Mantaro en Huancayo.">
+  <title>Catálogo de cuartos | Hospedaje Valle del Mantaro</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="contenedor">
+      <a href="index.html" class="logo">Valle del <span>Mantaro</span></a>
+      <button class="btn-menu" aria-label="Abrir menú">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Cuartos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="reserva.html" class="menu-reserva">Reservar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <p class="migas"><a href="index.html">Inicio</a> / Cuartos</p>
+      <h1>Catálogo de cuartos</h1>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="contenedor catalogo">
+      <aside class="filtros">
+        <h3>Filtros</h3>
+
+        <div class="filtro-grupo">
+          <span class="filtro-nombre">Número de camas</span>
+          <div class="opciones-camas">
+            <input type="radio" name="camas" id="camas-todas" value="" checked><label for="camas-todas">Todas</label>
+            <input type="radio" name="camas" id="camas-1" value="1"><label for="camas-1">1</label>
+            <input type="radio" name="camas" id="camas-2" value="2"><label for="camas-2">2</label>
+            <input type="radio" name="camas" id="camas-3" value="3"><label for="camas-3">3</label>
+            <input type="radio" name="camas" id="camas-4" value="4"><label for="camas-4">4</label>
+          </div>
+        </div>
+
+      </aside>
+
+      <section>
+        <div class="resultado-barra">
+          <p><strong id="total-resultados">0</strong> cuartos encontrados</p>
+          <div class="campo" style="margin:0">
+            <select id="orden" aria-label="Ordenar">
+              <option value="asc">Precio: menor a mayor</option>
+              <option value="desc">Precio: mayor a menor</option>
+            </select>
+          </div>
+        </div>
+        <div id="grilla-cuartos" class="grilla"></div>
+        <div class="sin-resultados">
+          <h3>No hay cuartos con esos filtros</h3>
+          <p style="margin-top:10px;color:#6c757d">Prueba con otro número de camas.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grilla">
+        <div>
+          <h4>Hospedaje Valle del Mantaro</h4>
+          <p>Descanso cálido y seguro en el corazón de Huancayo, a pocas cuadras de la Plaza Constitución.</p>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="catalogo.html">Catálogo de cuartos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="reserva.html">Solicitar reserva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Dirección:</strong> Jr. Cajamarca 784, Huancayo</li>
+            <li><strong>Teléfono:</strong> 985 623 009</li>
+            <li><strong>Correo:</strong> reservas@vallemantaro.pe</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-final">© <span class="anio"></span> Hospedaje Valle del Mantaro · Andre Luis</p>
+    </div>
+  </footer>
+
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
